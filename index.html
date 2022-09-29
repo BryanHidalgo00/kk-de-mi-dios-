@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+    <title>Reservation Policy</title>
+    <style>
+        * {
+            font-family: 'PT Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: aliceblue;
+        }
+
+        .qr-code__screen {
+            height: 100%;
+            width: 500px;
+            display: grid;
+            place-content: center;
+            padding: 50px;
+            background-color: #14162B;
+            margin: auto;
+        }
+
+
+        .qr-code__header {
+            width: 100%;
+            height: 100%;
+        }
+
+        .qr-code__header img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            position: relative;
+            top: 25px;
+        }
+
+        .qr-code__qr {
+            display: grid;
+            place-items: center;
+        }
+
+        .qr-code__qr img {
+            height: 250px;
+            width: 250px;
+            background-color: #393B60;
+            border-radius: 10px;
+            margin: auto;
+            display: grid;
+            place-items: center;
+            position: relative;
+            top: -25px;
+        }
+
+        .qr-code__qr p {
+            color: #50E5C3;
+            margin-top: 10px;
+        }
+
+        .qr-code__details {
+            height: 100%;
+            width: 100%;
+            display: grid;
+            place-items: center;
+            gap: 25px;
+            margin: auto;
+            
+        }
+
+        .information p {
+            margin: 20px;
+        }
+
+        .resend-code {
+            margin: auto;
+            margin-top: 20px;
+            font-size: 18px;
+            text-decoration: none;
+            background-color: #50E5C3;
+            color: #14162B !important;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+
+        .qr-code__policy {
+            width: 400px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            display: grid;
+            place-items: center;
+            background: #5D5F83;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .qr-code__policy li {
+            margin: 14px;
+        }
+
+        .qr-code__footer {
+            width: 500px;
+            background: #393B60;
+            display: grid;
+            place-items: center;
+            padding: 50px;
+            color: #F5F9FF;
+            font-size: 14px;
+            margin: auto;
+        }
+ 
+        .qr-code__footer span {
+            color: #50E5C3;
+        }
+
+        .qr-code__footer .social-media {
+            width: 100%;
+            display: inline;
+            text-align: center;
+            margin: 10px;
+        }
+
+        .social-media a {
+            padding: 10px;
+            text-decoration: none;
+            position: relative;
+            top: -15px;
+        }
+
+
+        .qr-code__footer .social-media img {
+            width: 30px;
+            height: 30px;
+
+            margin: auto;
+        }
+
+        .information {
+            margin-top: 40px;
+            margin: auto;
+
+        }
+        .qr-code__footer p:nth-child(4) {
+            color:#e1e1e1;
+        }
+        .qr-code__footer p:nth-child(5) {
+            color:#e1e1e1;
+        }
+ 
+    </style>
+</head>
+
+<body>
+    <div class="qr-code__screen">
+        <div class="qr-code__details">
+            <div class="qr-code__header">
+                <img src="https://nyc3.digitaloceanspaces.com/lul-bucket-dev/dev/assets/app_logo/Frame.png" alt="">
+            </div>
+            <p>Hello <b>{{player_name}}</b>, here you have the QR code you need to complete your account registration.
+            </p>
+            <br />
+            <div class="qr-code__qr">
+                <div class="qr-code__qr-image">
+                    <img src="{{qr_code}}" alt="">
+                </div>
+                <p>Please note that this code will expire on {{date}}.
+                </p>
+
+            </div>
+            <div class="information">
+                <p>Please scan this code using the Kiosk App and confirm this reservation.</p>
+                <p>If the code does not work, please request a new verification code and make sure the app is updated to
+                    the current version.</p>
+
+                <p>Thanks, <br> Level Up Support Team.</p>
+            </div>
+            <a class="resend-code"
+                href="https://lul-mobile-bff-dev-iat73.ondigitalocean.app/qrcode/resend?key=894321y849h1239uh19">Resend
+                Code</a>
+            <div class="qr-code__policy">
+                <h3>Reservation Policy</h3>
+                <ol>
+                    <li>Reservations may be cancelled without penalty any day, 24 hours prior to the reservation.</li>
+                    <li>If a same-day reservation is made, cancellation may be made any time without penalty, 60 minutes
+                        prior to the reservation.</li>
+                    <li>There is a USD $10 cancellation fee per Station reserved if penalized.</li>
+                    <li>Cancellation may be made by the Player App or by calling Front Desk.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="qr-code__footer">
+        <div class="social-media">
+            <a href="">
+                <img src="https://nyc3.digitaloceanspaces.com/lul-bucket-dev/dev/qr_codes/icon_facebook.png" alt="">
+            </a>
+            <a href="">
+                <img src="https://nyc3.digitaloceanspaces.com/lul-bucket-dev/dev/qr_codes/icon_instagram.png" alt="">
+            </a>
+            <a href="">
+                <img src="https://nyc3.digitaloceanspaces.com/lul-bucket-dev/dev/qr_codes/icon_twitter.png" alt="">
+            </a>
+        </div>
+
+        <p>This message was sent to <span>{{player_email}}</span>. If you have a question, please contact us.</p>
+        <br>
+        <p>2022 Level Up, All rights reserved.</p>
+        <p>4827 Center Street Eugene, OR 97401</p>
+    </div>
+</body>
+
+</html>
